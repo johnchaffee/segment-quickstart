@@ -2,11 +2,16 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Segment Quickstart</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-244022716-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag() { dataLayer.push(arguments) }
+    gtag('js', new Date())
+
+    gtag('config', 'UA-244022716-1');
+  </script>
+  <!-- Segment Analytics.js -->
   <script>
     !function () {
       var analytics = window.analytics = window.analytics || []; if (!analytics.initialize) if (analytics.invoked) window.console && console.error && console.error("Segment snippet included twice."); else {
@@ -16,12 +21,46 @@
       }
     }();
   </script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Segment Quickstart</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="">
 </head>
 
 <body>
-  <h1>Hello World!</h1>
-  <p>Paragraph text goes here.</p>
+  <h1>Segment Quickstart</h1>
+  <h2>Identify</h2>
+  <pre>
+  analytics.identify('f4ca124298', {
+    name: 'Michael Brown',
+    email: 'mbrown@example.com'
+  });
+
+  analytics.identify(' {{user.id}} ', {
+    name: '{{user.fullname}}',
+    email: '{{user.email}}'
+  });
+  </pre>
+  <h2>Track Actions</h2>
+  <pre>
+  analytics.track('Signed Up', {
+    plan: 'Enterprise'
+  });
+  
+  analytics.track('Article Bookmarked', {
+    title: 'Snow Fall',
+    subtitle: 'The Avalanche at Tunnel Creek',
+    author: 'John Branch'
+  });
+  </pre>
+  <p>Things to track:</p>
+  <ul>
+    <li>Signed Up</li>
+    <li>Item Purchased</li>
+    <li>Article Bookmarked</li>
+  </ul>
   <script src="" async defer></script>
 </body>
 
