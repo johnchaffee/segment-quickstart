@@ -3,14 +3,14 @@
 
 <head>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-244022716-1"></script>
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-244022716-1"></script>
   <script>
     window.dataLayer = window.dataLayer || []
     function gtag() { dataLayer.push(arguments) }
     gtag('js', new Date())
 
     gtag('config', 'UA-244022716-1');
-  </script>
+  </script> -->
   <!-- Segment Analytics.js -->
   <script>
     !function () {
@@ -33,35 +33,117 @@
   <h1>Segment Quickstart</h1>
   <h2>Identify</h2>
   <pre>
-  analytics.identify('f4ca124298', {
-    name: 'Michael Brown',
-    email: 'mbrown@example.com'
-  });
+  {
+    "userId": "019mr8mf4r",
+    "traits": {
+        "email": "pgibbons@example.com",
+        "name": "Peter Gibbons",
+        "industry": "Technology"
+    },
+    "context": {
+        "ip": "24.5.68.47"
+    },
+    "timestamp": "2012-12-02T00:30:08.276Z"
+  }
+  </pre>
 
-  analytics.identify(' {{user.id}} ', {
-    name: '{{user.fullname}}',
-    email: '{{user.email}}'
-  });
-  </pre>
-  <h2>Track Actions</h2>
+  <h2>Page</h2>
   <pre>
-  analytics.track('Signed Up', {
-    plan: 'Enterprise'
-  });
-  
-  analytics.track('Article Bookmarked', {
-    title: 'Snow Fall',
-    subtitle: 'The Avalanche at Tunnel Creek',
-    author: 'John Branch'
-  });
+  {
+    "userId": "019mr8mf4r",
+    "name": "Github Repo",
+    "timestamp": "2012-12-02T00:31:29.738Z",
+    "properties": {
+        "title": "Segment Quickstart",
+        "url": "https://github.com/johnchaffee/segment-quickstart",
+        "path": "/johnchaffee/segment-quickstart"
+    }
+  }
   </pre>
-  <p>Things to track:</p>
-  <ul>
-    <li>Signed Up</li>
-    <li>Item Purchased</li>
-    <li>Article Bookmarked</li>
-  </ul>
-  <script src="" async defer></script>
+
+  <h2>Screen</h2>
+  <pre>
+  {
+    "userId": "019mr8mf4r",
+    "name": "Home Screen",
+    "timestamp": "2012-12-02T00:31:29.738Z"
+  }
+  </pre>
+  
+  <h2>Track</h2>
+
+  <h3>Article Bookmarked</h3>
+  <pre>
+  {
+    "userId": "019mr8mf4r",
+    "event": "Article Bookmarked",
+    "properties": {
+        "name": "Lean Startup",
+        "url": "http://theleanstartup.com"
+    },
+    "context": {
+        "ip": "24.5.68.47"
+    },
+    "timestamp": "2012-12-02T00:30:12.984Z"
+  }
+  </pre>
+
+  <h3>Item Purchased</h3>
+  <pre>
+  {
+    "userId": "019mr8mf4r",
+    "event": "Item Purchased",
+    "properties": {
+        "name": "Leap to Conclusions Mat",
+        "revenue": 14.99
+    },
+    "context": {
+        "ip": "24.5.68.47"
+    },
+    "timestamp": "2012-12-02T00:30:12.984Z"
+  }
+  </pre>
+
+  <h3>Subscribed</h3>
+  <pre>
+  {
+    "userId": "019mr8mf4r",
+    "event": "Subscribed",
+    "properties": {
+        "name": "Peter Gibbons",
+        "email": "pgibbons@example.com",
+        "newsletter": true
+    },
+    "context": {
+        "ip": "24.5.68.47"
+    },
+    "timestamp": "2012-12-02T00:30:12.984Z"
+  }
+  </pre>
+
+  <h2>Group</h2>
+  <pre>
+  {
+    "userId": "019mr8mf4r",
+    "groupId": "8e9df332ac",
+    "traits": {
+        "name": "Initech",
+        "industry": "Technology",
+        "employees": 420
+    },
+    "timestamp": "2012-12-02T00:31:38.208Z"
+  }
+  </pre>
+
+  <h2>Alias</h2>
+  <pre>
+  {
+    "previousId": "39239-239239-239239-23923",
+    "userId": "019mr8mf4r",
+    "timestamp": "2012-12-02T00:31:29.738Z"
+  }
+  </pre>
+
 </body>
 
 </html>
